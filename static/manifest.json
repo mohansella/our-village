@@ -1,0 +1,14 @@
+{
+	"background_color": "#ffffff",
+	"theme_color": "#333333",
+	"name": "our-village",
+	"short_name": "our-village",
+	"display": "minimal-ui",
+	"start_url": "/",
+	"icons": [
+		{
+			"src": "favicon.png",
+			"type": "image/svg"
+		}
+	]
+}
