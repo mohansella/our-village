@@ -1,4 +1,4 @@
-import { _, locale} from 'svelte-i18n'
+import { _, locale, addMessages } from 'svelte-i18n'
 import { CookieStorage } from 'cookie-storage'
 
 const COOKIE_KEY_LOCALE = 'appLocale';
@@ -34,4 +34,5 @@ export {
     locales,
     getLocale,
     setLocale,
+    addMessages
 }
