@@ -4,8 +4,13 @@
         console.log(params, query);
         const { lang } = params;
         const res = await this.fetch(`/lang/${lang}.json`);
-        const messages = await res.json();
-        return { messages, segment: lang };
+        
+        if (res.status === 200) {
+            const messages = await res.json();
+            return { messages, segment: lang };
+        }
+
+        this.error(404, 'Not found');
     }
 
 </script>
