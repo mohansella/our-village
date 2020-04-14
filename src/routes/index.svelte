@@ -8,6 +8,21 @@
     })
 </script>
 
-{#each locales as locale }
-    <a href="./{locale.name}" >{locale.display}</a><br>
-{/each}
+<style>
+    div {
+        position: fixed;
+        right: 0;
+        top: 0;
+        padding:10px;
+    }
+
+    div > a {
+        padding: 20px;
+    }
+</style>
+
+<div>
+    {#each locales as locale}
+        <a href="./{locale.name}">{locale.display}</a>
+    {/each}
+</div>
