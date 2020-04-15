@@ -15,24 +15,25 @@
 </script>
 
 <script>
+    import { beforeUpdate } from 'svelte'
     import Header from '../../components/Header.svelte'
     import { _, locale, addMessages, setLocale } from '../../services/LocaleService.js'
 
     export let segment;
     export let messages;
 
-    let handleChanges = (segment, messages) => {
+    $: {
         addMessages(segment, messages);
         locale.set(segment);
-        setLocale(segment);
-    };
+    }
 
-    $: handleChanges(segment, messages);
-    $: title = $_('titles.main');
+    beforeUpdate(() => {
+        setLocale(segment);
+    });
 </script>
 
 <svelte:head>
-    <title>{title}</title>
+    <title>{$_('titles.main')}</title>
 </svelte:head>
 
 <Header pathPrefix="{segment}/"/><br>

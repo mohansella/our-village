@@ -1,6 +1,17 @@
-<script>
+<script context="module">
+    //this file does nothing but displays urls for each language at the bottom right in development mode
     import { locales } from '../services/LocaleService.js'
-    const isDebug = true;
+    
+    export async function preload({ params, query }) {
+        const MODE_DEVELOPMENT = "development";
+        const mode = process.env.NODE_ENV;
+        const isDebugMode = mode === MODE_DEVELOPMENT;
+        return { isDebug : isDebugMode };
+    }
+</script>
+
+<script>
+    export let isDebug = false; //set to true in development mode
 </script>
 
 <slot></slot>
