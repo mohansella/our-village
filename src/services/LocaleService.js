@@ -16,16 +16,24 @@ const taLocale = {
 const locales = [enLocale, taLocale]
 const defaultLocale = enLocale;
 
-let getLocale = () => {
+const normalizeLocale = (localeParam) => {
+    let foundLocale = locales.find((localeObj) => localeObj.name === localeParam);
+    return foundLocale ? foundLocale.name : defaultLocale.name;
+}
+
+const getLocale = () => {
     const cookieStorage = new CookieStorage();
-    const localeParam = cookieStorage.getItem(COOKIE_KEY_LOCALE) || defaultLocale.name;
+    const localeParam = normalizeLocale(cookieStorage.getItem(COOKIE_KEY_LOCALE));
     cookieStorage.setItem(COOKIE_KEY_LOCALE, localeParam);
     return localeParam;
 };
 
-let setLocale = (localeParam) => {
+const setLocale = (localeParam) => {
     const cookieStorage = new CookieStorage();
-    cookieStorage.setItem(COOKIE_KEY_LOCALE, localeParam);
+    let normalizedLocale = normalizeLocale(localeParam);
+    if(normalizedLocale === localeParam) {
+        cookieStorage.setItem(COOKIE_KEY_LOCALE, localeParam);
+    }
 }
 
 export {
