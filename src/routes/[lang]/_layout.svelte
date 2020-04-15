@@ -16,7 +16,7 @@
 
 <script>
     import Header from '../../components/Header.svelte'
-    import { locale, addMessages, isLoading } from '../../services/LocaleService.js'
+    import { _, locale, addMessages } from '../../services/LocaleService.js'
 
     export let segment;
     export let messages;
@@ -26,12 +26,14 @@
         locale.set(segment);
     };
 
-    locale.set(segment);
     $: handleChanges(segment, messages);
+    $: title = $_('titles.main');
 </script>
 
-{#if !$isLoading}
-    <Header pathPrefix="{segment}/"/><br>
-    Segment : {segment}<br>
-    <slot></slot>
-{/if}
+<svelte:head>
+    <title>{title}</title>
+</svelte:head>
+
+<Header pathPrefix="{segment}/"/><br>
+Segment : {segment}<br>
+<slot></slot>
