@@ -16,7 +16,7 @@
 
 <script>
     import Header from '../../components/Header.svelte'
-    import { _, locale, addMessages } from '../../services/LocaleService.js'
+    import { _, locale, addMessages, setLocale } from '../../services/LocaleService.js'
 
     export let segment;
     export let messages;
@@ -24,6 +24,7 @@
     let handleChanges = (segment, messages) => {
         addMessages(segment, messages);
         locale.set(segment);
+        setLocale(segment);
     };
 
     $: handleChanges(segment, messages);
