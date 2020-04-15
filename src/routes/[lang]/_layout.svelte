@@ -1,7 +1,6 @@
 <script context="module">
 
     export async function preload({ params, query }) {
-        console.log(params, query);
         const { lang } = params;
         const res = await this.fetch(`/lang/${lang}.json`);
         
@@ -17,15 +16,22 @@
 
 <script>
     import Header from '../../components/Header.svelte'
-    import { locale, addMessages } from '../../services/LocaleService.js'
+    import { locale, addMessages, isLoading } from '../../services/LocaleService.js'
 
     export let segment;
     export let messages;
 
-    $: addMessages(segment, messages);
-    $: locale.set(segment);
+    let handleChanges = (segment, messages) => {
+        addMessages(segment, messages);
+        locale.set(segment);
+    };
+
+    locale.set(segment);
+    $: handleChanges(segment, messages);
 </script>
 
-<Header pathPrefix="{segment}/"/>
-Segment : {segment}<br>
-<slot></slot>
+{#if !$isLoading}
+    <Header pathPrefix="{segment}/"/><br>
+    Segment : {segment}<br>
+    <slot></slot>
+{/if}
