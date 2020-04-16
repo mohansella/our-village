@@ -16,7 +16,7 @@
 
 <script>
     import { beforeUpdate } from 'svelte'
-    import Header from '../../components/Header.svelte'
+    import Header from '../../components/header.svelte'
     import { _, locale, addMessages, setLocale } from '../../services/LocaleService.js'
 
     export let segment;
@@ -36,6 +36,6 @@
     <title>{$_('titles.main')}</title>
 </svelte:head>
 
-<Header pathPrefix="{segment}/"/><br>
+<Header segment="{segment}"/><br>
 Segment : {segment}<br>
 <slot></slot>

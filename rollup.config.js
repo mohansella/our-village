@@ -36,7 +36,12 @@ export default {
 						'node_modules/bootstrap/dist/css/bootstrap.min.css',
 						'node_modules/bootstrap/dist/js/bootstrap.min.js'
 					], 
-					dest: 'static/vendor/bootstrap' 
+					dest: 'static/vendor/bootstrap'
+				}, {
+					src: [
+						'node_modules/jquery/dist/jquery.min.js'
+					], 
+					dest: 'static/vendor/jquery' 
 				}]
 			}),
 			replace({
