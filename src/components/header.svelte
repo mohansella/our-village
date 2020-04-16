@@ -1,9 +1,9 @@
 <script>
-    import { _ } from "../services/LocaleService.js";
-    import Facebook from "./svgs/facebook.svelte";
-    import Instagram from "./svgs/instagram.svelte";
-    import Discord from "./svgs/discord.svelte";
-    import Heart from "./svgs/heart.svelte";
+    import { _ } from "@/services/LocaleService.js";
+    import Facebook from "@/components/svgs/facebook.svelte";
+    import Instagram from "@/components/svgs/instagram.svelte";
+    import Discord from "@/components/svgs/discord.svelte";
+    import Heart from "@/components/svgs/heart.svelte";
 
     const links = [ "culture", "tourism", "events", "gallery", "blogs" ];
     export let segment = "";

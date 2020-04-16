@@ -16,8 +16,8 @@
 
 <script>
     import { beforeUpdate } from 'svelte'
-    import Header from '../../components/header.svelte'
-    import { _, locale, addMessages, setLocale } from '../../services/LocaleService.js'
+    import Header from '@/components/header.svelte'
+    import { _, locale, addMessages, setLocale } from '@/services/LocaleService.js'
 
     export let segment;
     export let messages;

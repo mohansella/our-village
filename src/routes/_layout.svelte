@@ -1,6 +1,6 @@
 <script context="module">
     //this file does nothing but displays urls for each language at the bottom right in development mode
-    import { locales } from '../services/LocaleService.js'
+    import { locales } from '@/services/LocaleService.js'
     
     export async function preload({ params, query }) {
         const MODE_DEVELOPMENT = "development";

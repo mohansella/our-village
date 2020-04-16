@@ -1,3 +1,4 @@
+import alias from '@rollup/plugin-alias';
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
@@ -23,13 +24,23 @@ const onwarn = (warning, onwarn) => {
 	}
   
 	onwarn(warning)
-  }
+}
+
+const getAlias = () => {
+	return alias({
+		resolve: ['.js','.svelte' ],
+		entries: [
+			{find:'@', replacement:'src'}
+		]
+	});
+}
 
 export default {
 	client: {
 		input: config.client.input(),
 		output: config.client.output(),
 		plugins: [
+			getAlias(),
 			copy({
 				targets: [{
 					src: [
@@ -88,6 +99,7 @@ export default {
 		input: config.server.input(),
 		output: config.server.output(),
 		plugins: [
+			getAlias(),
 			replace({
 				'process.browser': false,
 				'process.env.NODE_ENV': JSON.stringify(mode)

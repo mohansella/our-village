@@ -1,7 +1,7 @@
 <script>
     import { onMount } from 'svelte'
     import { goto } from '@sapper/app'
-    import { locales, getLocale } from '../services/LocaleService.js'
+    import { locales, getLocale } from '@/services/LocaleService.js'
 
     onMount( () => {
         const locale = getLocale();
