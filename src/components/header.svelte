@@ -3,7 +3,7 @@
     import Facebook from "./svgs/facebook.svelte";
     import Instagram from "./svgs/instagram.svelte";
     import Discord from "./svgs/discord.svelte";
-    import HandHoldingHeart from "./svgs/hand-holding-heart.svelte";
+    import Heart from "./svgs/heart.svelte";
 
     const links = [ "culture", "tourism", "events", "gallery", "blogs" ];
     export let segment = "";
@@ -29,9 +29,9 @@
                 </li>
             {/each}
 
-            <li class="nav-item">
-              <div class="nav-link nav-hand-heart">
-                <HandHoldingHeart></HandHoldingHeart>
+            <li>
+              <div class="nav-heart btn">
+                <Heart></Heart>
               </div>
             </li>
             

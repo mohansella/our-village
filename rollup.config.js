@@ -34,7 +34,7 @@ export default {
 				targets: [{
 					src: [
 						'node_modules/bootstrap/dist/css/bootstrap.min.css',
-						'node_modules/bootstrap/dist/js/bootstrap.min.js'
+						'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
 					], 
 					dest: 'static/vendor/bootstrap'
 				}, {
