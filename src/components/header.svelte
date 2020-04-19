@@ -9,6 +9,20 @@
     export let segment = "";
 </script>
 
+<style>
+.nav-heart {
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    padding: 3px 0px 4px 15px;
+    opacity: 0.65;
+}
+
+.nav-heart:hover {
+    opacity: 1;
+}
+</style>
+
 <nav class="navbar navbar-expand-md navbar-light bg-light">
 
     <a class="navbar-brand" href=".">

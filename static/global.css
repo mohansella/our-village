@@ -1,9 +1,1 @@
-.nav-heart > svg {
-    height: 25px;
-    padding: 3px 0px 4px 15px;
-    opacity: 0.65;
-}
-
-.nav-heart:hover > svg {
-    opacity: 1;
-}
+@import "vendor/normalize.css/normalize.css";
