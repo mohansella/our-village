@@ -33,7 +33,7 @@
 </script>
 
 <svelte:head>
-    <title>{$_('titles.main')}</title>
+    <title>{$_('titles.main.desc')}</title>
 </svelte:head>
 
 <Header segment="{segment}"/><br>

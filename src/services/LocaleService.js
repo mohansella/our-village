@@ -37,6 +37,8 @@ const setLocale = (localeParam) => {
 }
 
 export {
+    enLocale,
+    taLocale,
     _,
     locale,
     locales,

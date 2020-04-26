@@ -1,54 +1,77 @@
 <script>
-    import { _ } from "@/services/LocaleService.js";
-    import Facebook from "@/components/svgs/facebook.svelte";
-    import Instagram from "@/components/svgs/instagram.svelte";
-    import Discord from "@/components/svgs/discord.svelte";
-    import Heart from "@/components/svgs/heart.svelte";
+    import { enLocale, taLocale, _ } from "@/services/LocaleService.js";
+    import LogoSvg from "@/components/svgs/logo.svelte";
+    import { stores } from '@sapper/app';
+    
+    export let segment = "";
+    let otherLangUrl = ".";
+    let otherLocale = taLocale;
 
     const links = [ "culture", "tourism", "events", "gallery", "blogs" ];
-    export let segment = "";
+    const { page, preloading, session } = stores();
+
+    $: {
+        let match = /^\/(\w+)(.*?)$/.exec($page.path);
+        if(match) {
+            otherLocale = match[1] == enLocale.name ? taLocale : enLocale;
+            otherLangUrl = "/" + otherLocale.name + match[2];
+        }
+    }
+    
 </script>
 
-<style>
-.nav-heart {
-    height: 25px;
-    width: 25px;
-    display: inline-block;
-    padding: 3px 0px 4px 15px;
-    opacity: 0.65;
-}
-
-.nav-heart:hover {
-    opacity: 1;
-}
-</style>
-
-<nav class="navbar navbar-expand-md navbar-light bg-light">
-
-    <a class="navbar-brand" href=".">
-        <img src="favicon.svg" alt="logo" height="32px" style="padding-bottom: 4px;">
-        <span>Poolampatti</span>
+<nav>
+    <a class="brand" href="{segment}">
+        <LogoSvg/>
+        <span>{$_(`titles.main.disp`)}</span>
     </a>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav ml-auto">
-            
-            {#each links as link}
-                <li class="nav-item">
-                    <a class="nav-link" href="{segment}/{link}">{$_(`header.${link}`)}</a>
-                </li>
-            {/each}
-
+    <ul class="links">
+        {#each links as link}
             <li>
-              <div class="nav-heart btn">
-                <Heart></Heart>
-              </div>
+                <a href="{segment}/{link}">{$_(`header.${link}`)}</a>
             </li>
-            
-        </ul>
-    </div>
+        {/each}
+    </ul>
+    <a class="lang" href="{otherLangUrl}">{otherLocale.display}</a>
 </nav>
+
+<style>
+    nav {
+        height: 40px;
+        padding: 8px 16px;
+        display: flex;
+    }
+
+    .brand {
+        flex: 4;
+        display: flex;
+        align-items: center;
+        width: 200px;
+        font-size: 20px;
+    }
+
+    .brand > :global(svg) {
+        height: 25px;
+        margin: 0px 5px;
+    }
+
+    .links {
+        display: flex;
+        align-items: center;
+        padding: 0px;
+        margin: 0px;
+        list-style-type: none;
+    }
+
+    .links > li {
+        padding: 0px 10px;
+        font-size: 16px;
+    }
+
+    .lang {
+        font-size: 10px;
+        position: absolute;
+        top: 0px;
+        right: 20px;
+    }
+</style>

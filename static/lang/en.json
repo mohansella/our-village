@@ -1,6 +1,9 @@
 {
     "titles": {
-        "main": "Poolampatti - God's own Village"
+        "main": {
+            "disp": "Poolampatti",
+            "desc": "Poolampatti - God's own Village"
+        }
     },
     "header": {
         "culture": "Culture",
