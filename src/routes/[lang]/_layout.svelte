@@ -36,6 +36,5 @@
     <title>{$_('titles.main.desc')}</title>
 </svelte:head>
 
-<Header segment="{segment}"/><br>
-Segment : {segment}<br>
+<Header segment="{segment}"/>
 <slot></slot>
