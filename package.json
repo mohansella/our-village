@@ -12,12 +12,9 @@
     "test": "run-p --race dev cy:run"
   },
   "dependencies": {
-    "@popperjs/core": "^2.4.0",
     "compression": "^1.7.1",
-    "cookie-storage": "^6.0.0",
     "polka": "next",
-    "sirv": "^0.4.0",
-    "svelte-i18n": "^3.0.3"
+    "sirv": "^0.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -37,6 +34,9 @@
     "rollup-plugin-svelte": "^5.0.1",
     "rollup-plugin-terser": "^5.1.3",
     "sapper": "^0.27.0",
-    "svelte": "^3.0.0"
+    "svelte": "^3.0.0",
+    "@popperjs/core": "^2.4.0",
+    "cookie-storage": "^6.0.0",
+    "svelte-i18n": "^3.0.3"
   }
 }
