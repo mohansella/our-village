@@ -46,7 +46,7 @@
 
     function initalizePopper() {
         popperInstance = createPopper(heartEle, heartListEle, {
-            placement: 'bottom-start',
+            placement: 'bottom',
             modifiers: [
                 {
                     name: 'offset',
@@ -89,6 +89,9 @@
                 <a href="{segment}/{link}">{$_(`header.${link}`)}</a>
             </li>
         {/each}
+        <li>
+            <a href="{otherLangUrl}">{otherLocale.display}</a>
+        </li>
         <li class="heart" bind:this={heartEle} on:click|stopPropagation={showTT}>
             <HeartSvg/>
             
@@ -110,7 +113,6 @@
         </li>
     </ul>
     
-    <a class="lang" href="{otherLangUrl}">{otherLocale.display}</a>
     <div class="bars" on:click={toggleBars}><BarsSvg/></div>
 
 </nav>
@@ -159,13 +161,6 @@
     .links > li > a:hover {
         color: black;
         border-bottom: 2px solid black;
-    }
-
-    .lang {
-        font-size: 10px;
-        position: absolute;
-        top: 0px;
-        right: 20px;
     }
 
     /* heart */
@@ -266,7 +261,7 @@
 
         .links > li {
             margin: 10px;
-            width: 100%;
+            width: 95%;
             border-bottom: 1px solid #b5b5b5;
             padding-bottom: 8px;
         }

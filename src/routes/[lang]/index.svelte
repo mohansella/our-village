@@ -3,6 +3,7 @@
 <style>
     .main-landscape {
         width: 100%;
+        min-height: 350px;
         max-height: 550px;
         object-fit: cover;
     }
