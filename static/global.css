@@ -75,3 +75,7 @@ a:visited {
 a:hover {
     color: rgb(0, 0, 238);
 }
+
+body {
+    min-width: 800px;
+}

@@ -10,6 +10,10 @@
         "tourism": "Tourism",
         "events": "Events",
         "gallery": "Gallery",
-        "blogs": "Blogs"
+        "blogs": "Blogs",
+
+        "instagram": "Instagram",
+        "facebook": "Facebook",
+        "discord": "Discord"
     }
 }

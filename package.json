@@ -12,6 +12,7 @@
     "test": "run-p --race dev cy:run"
   },
   "dependencies": {
+    "@popperjs/core": "^2.4.0",
     "compression": "^1.7.1",
     "cookie-storage": "^6.0.0",
     "polka": "next",
