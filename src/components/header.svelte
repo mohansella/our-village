@@ -125,7 +125,10 @@
         padding: 8px 16px;
         display: flex;
         justify-content: space-around;
-        background-color: #f8f9fa;
+
+        width: 95%;
+        margin: auto;
+        max-width: 1600px;
     }
 
     /* brand */

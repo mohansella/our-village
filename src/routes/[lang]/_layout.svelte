@@ -36,5 +36,21 @@
     <title>{$_('titles.main.desc')}</title>
 </svelte:head>
 
-<Header segment="{segment}"/>
-<slot></slot>
+<div class="header">
+    <Header segment="{segment}"/>
+</div>
+<main>
+    <slot></slot>
+</main>
+
+<style>
+    .header {
+        background-color: #f8f9fa;
+    }
+
+    main {
+        width: 95%;
+        margin: auto;
+        max-width: 1600px;
+    }
+</style>
