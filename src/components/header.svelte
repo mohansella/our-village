@@ -10,6 +10,7 @@
     import InstagramSvg from "@/components/svgs/instagram.svelte";
     import FacebookSvg from "@/components/svgs/facebook.svelte";
     import DiscordSvg from "@/components/svgs/discord.svelte";
+    import BarsSvg from "@/components/svgs/bars.svelte";
     
     
     export let segment = "";
@@ -19,6 +20,7 @@
 
     let heartEle;
     let heartListEle;
+    let linksEle;
     let popperInstance;
 
     const links = [ "culture", "tourism", "events", "gallery", "blogs" ];
@@ -33,7 +35,7 @@
     }
 
     function showTT() {
-        heartListEle.style.display = "flex";
+        heartListEle.style.display = "";
         popperInstance.update();
     }
 
@@ -41,8 +43,8 @@
         heartListEle.style.display = "none";
         popperInstance.update();
     }
-    
-    onMount(()=> {
+
+    function initalizePopper() {
         popperInstance = createPopper(heartEle, heartListEle, {
             placement: 'bottom-start',
             modifiers: [
@@ -55,10 +57,20 @@
             ],
         });
 
-        return () => {
+        return destroyPopper;
+    }
+
+    function destroyPopper() {
+        if(popperInstance) {
             popperInstance.destroy();
         }
-    });
+    }
+
+    function toggleBars() {
+        linksEle.classList.toggle('show');
+    }
+    
+    onMount(initalizePopper);
 
 </script>
 
@@ -71,7 +83,7 @@
         <span>{$_(`titles.main.disp`)}</span>
     </a>
     
-    <ul class="links">
+    <ul class="links"  bind:this={linksEle}>
         {#each links as link}
             <li>
                 <a href="{segment}/{link}">{$_(`header.${link}`)}</a>
@@ -99,6 +111,7 @@
     </ul>
     
     <a class="lang" href="{otherLangUrl}">{otherLocale.display}</a>
+    <div class="bars" on:click={toggleBars}><BarsSvg/></div>
 
 </nav>
 
@@ -106,7 +119,7 @@
 
     /* navigation main */
     nav {
-        height: 40px;
+        min-height: 56px;
         padding: 8px 16px;
         display: flex;
         justify-content: space-around;
@@ -121,6 +134,7 @@
         font-size: 20px;
         max-width: 160px;
         margin-right: auto;
+        min-height: 40px;
     }
 
     .brand > :global(svg) {
@@ -142,6 +156,11 @@
         font-size: 16px;
     }
 
+    .links > li > a:hover {
+        color: black;
+        border-bottom: 2px solid black;
+    }
+
     .lang {
         font-size: 10px;
         position: absolute;
@@ -150,15 +169,13 @@
     }
 
     /* heart */
-    .heart {
-        opacity: 0.7;
-    }
-    .heart:hover {
-        opacity: 1;
-    }
     .heart > :global(svg) {
         width: 16px;
         cursor: pointer;
+        opacity: 0.7;
+    }
+    .heart:hover > :global(svg:hover) {
+        opacity: 1;
     }
     .heart-tt {
         display: flex;
@@ -202,7 +219,6 @@
         left: -4px;
     }
 
-
     .heart-tt > a {
         display: flex;
         margin: 6px 15px;
@@ -211,5 +227,48 @@
         height: 16px;
         margin-top: 2px;
         margin-right: 4px;
+    }
+
+    .bars {
+        height: 20px;
+        width: 20px;
+        border: none;
+        position: absolute;
+        top: 18px;
+        right: 22px;
+        display: none;
+        cursor: pointer;
+    }
+
+    .bars:hover {
+        opacity: 0.9;
+    }
+
+    @media(max-width: 800px) {
+        .bars {
+            display: inline-block;
+        }
+        
+        nav {
+            flex-direction: column;
+        }
+
+        .links {
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 15px;
+        }
+
+        :global(.links.show) {
+            display: flex !important;
+        }
+
+        .links > li {
+            margin: 10px;
+            width: 100%;
+            border-bottom: 1px solid #b5b5b5;
+            padding-bottom: 8px;
+        }
     }
 </style>
