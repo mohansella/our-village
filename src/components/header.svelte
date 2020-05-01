@@ -183,6 +183,7 @@
         align-items: baseline;
         background: white;
         box-shadow: 4px 2px 12px #888888;
+        z-index: 100;
     }
 
     .heart-tt-arrow, .heart-tt-arrow::before {

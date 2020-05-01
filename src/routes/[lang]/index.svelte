@@ -4,7 +4,8 @@
 
     const images = [
         { src: 'IMG_20200117_154938.jpg', alt: 'Poolampatti landscape 1'},
-        { src: 'IMG_20190907_140811.jpg', alt: 'Poolampatti landscape 2'},
+        { src: 'IMG_20181223_072757-01.jpg', alt: 'Poolampatti landscape 2'},
+        { src: 'IMG_20190907_140811.jpg', alt: 'Poolampatti landscape 3'}
     ];
 </script>
 
