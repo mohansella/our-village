@@ -53,4 +53,10 @@
         margin: auto;
         max-width: 1600px;
     }
+
+    @media(max-width: 800px) {
+        main {
+            width: 100%;
+        }
+    }
 </style>
