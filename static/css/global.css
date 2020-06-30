@@ -1,0 +1,89 @@
+@import 'vendor/normalize.css/normalize.css';
+
+/* ------------- Font family 'Mukta Malar' definition start ----------- */
+@font-face {
+    font-family: 'Mukta Malar';
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: local('Mukta Malar ExtraLight'), local('MuktaMalar-ExtraLight'), url(fonts/mukta_malar/MuktaMalar-ExtraLight.ttf);
+    unicode-range: U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC;
+}
+@font-face {
+    font-family: 'Mukta Malar';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: local('Mukta Malar Light'), local('MuktaMalar-Light'), url(../fonts/mukta_malar/MuktaMalar-Light.ttf);
+    unicode-range: U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC;
+}
+@font-face {
+    font-family: 'Mukta Malar';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Mukta Malar Regular'), local('MuktaMalar-Regular'), url(../fonts/mukta_malar/MuktaMalar-Regular.ttf);
+    unicode-range: U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC;
+}
+@font-face {
+    font-family: 'Mukta Malar';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: local('Mukta Malar Medium'), local('MuktaMalar-Medium'), url(fonts/mukta_malar/MuktaMalar-Medium.ttf);
+    unicode-range: U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC;
+}
+@font-face {
+    font-family: 'Mukta Malar';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: local('Mukta Malar SemiBold'), local('MuktaMalar-SemiBold'), url(fonts/mukta_malar/MuktaMalar-SemiBold.ttf);
+    unicode-range: U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC;
+}
+@font-face {
+    font-family: 'Mukta Malar';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local('Mukta Malar Bold'), local('MuktaMalar-Bold'), url(fonts/mukta_malar/MuktaMalar-Bold.ttf);
+    unicode-range: U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC;
+}
+@font-face {
+    font-family: 'Mukta Malar';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: local('Mukta Malar ExtraBold'), local('MuktaMalar-ExtraBold'), url(fonts/mukta_malar/MuktaMalar-ExtraBold.ttf);
+    unicode-range: U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC;
+}
+/* ------------- Font family 'Mukta Malar' definition end ----------- */
+
+* {
+    font-family: 'Mukta Malar', '-apple-system', 'BlinkMacSystemFont','Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+a {
+    text-decoration-line: none;
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: rgb(0, 0, 238);
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+ }

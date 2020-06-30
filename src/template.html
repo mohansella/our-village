@@ -7,7 +7,9 @@
 
 	%sapper.base%
 
-	<link rel='stylesheet' href='global.css'>
+	<link rel='stylesheet' href='css/global.css'>
+	<link rel='stylesheet' href='css/custom.css'>
+	<link rel="stylesheet" href="css/main.css" />
 	<link rel='manifest' href='manifest.json' crossorigin='use-credentials'>
 	<link rel='icon' type='image/svg' href='favicon.svg'>
 
@@ -17,7 +19,24 @@
 </head>
 <body>
 	<div id='app-pivot'>%sapper.html%</div>
-
-	%sapper.scripts%
+	<footer id="footer">
+		<div class="container">
+			<ul class="icons">
+				<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+			</ul>
+		</div>
+		<div class="copyright">
+			&copy; Poolampatti.in All rights reserved.
+		</div>
+	</footer>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.scrollex.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/util.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/custom.js"></script>
 </body>
 </html>

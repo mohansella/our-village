@@ -1,0 +1,21 @@
+#app-pivot .header {
+    position: fixed;
+    background: none;
+    color: #a6a6a6;
+    position: fixed;
+    width: 100%;
+    z-index: 10001;
+}
+.header .links a {
+    font-size: 18px;
+}
+.header .links a:hover {
+    border: none !important;
+    color: #fff !important;
+}
+#app-pivot .pageDown {
+    background-color: #00000070;
+}
+.pageDown .links a {
+    color: #fff;
+}

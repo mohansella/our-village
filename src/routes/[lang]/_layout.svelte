@@ -49,7 +49,7 @@
     }
 
     main {
-        width: 95%;
+        width: 100%;
         margin: auto;
         max-width: 1600px;
     }
