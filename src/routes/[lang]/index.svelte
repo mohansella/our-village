@@ -4,9 +4,9 @@
     import { _ } from "@/services/LocaleService.js";
 
     const images = [
-        { src: 'IMG_20200117_154938.jpg', alt: 'Poolampatti landscape 1', heading: 'carousal.nature'},
-        { src: 'IMG_20181223_072757-01.jpg', alt: 'Poolampatti landscape 2', heading: 'carousal.heaven'},
-        { src: 'IMG_20190907_140811.jpg', alt: 'Poolampatti landscape 3', heading: 'carousal.beauty'}
+        { src: 'IMG_20200117_154938.jpg', alt: 'Poolampatti landscape 1', heading: 'carousel.nature'},
+        { src: 'IMG_20181223_072757-01.jpg', alt: 'Poolampatti landscape 2', heading: 'carousel.heaven'},
+        { src: 'IMG_20190907_140811.jpg', alt: 'Poolampatti landscape 3', heading: 'carousel.beauty'}
     ];
 </script>
 
@@ -19,7 +19,7 @@
       <img class="slide-content" src={`images/landscape/${image.src}`} alt={image.alt}>
       <div class="centered-div">
         <header>
-          <p>{$_("carousal.gods_own_village")}</p>
+          <p>{$_("carousel.gods_own_village")}</p>
           <h2>{$_(image.heading)}</h2>
         </header>
       </div>
@@ -60,13 +60,14 @@
         text-align: center;
     }
     .centered-div > header > p {
-        color: rgba(255, 255, 255, 0.65);
+        color: rgba(255, 255, 255, 0.8);
         text-transform: uppercase;
         font-size: 1rem;
         font-weight: 300;
         margin: 0;
         padding-bottom: 1.75rem;
         letter-spacing: .25rem;
+        text-shadow: 0 0 25px #000;
     }
     .centered-div > header > p::after {
         content: '';
