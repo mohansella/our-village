@@ -15,5 +15,11 @@
         "instagram": "Instagram",
         "facebook": "Facebook",
         "discord": "Discord"
+    },
+    "carousal": {
+        "gods_own_village": "GODS OWN VILLAGE",
+        "nature": "Nature",
+        "heaven": "Heaven",
+        "beauty": "Beauty"
     }
 }

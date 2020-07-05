@@ -15,5 +15,11 @@
         "instagram": "இன்ஸ்டாகிராம்",
         "facebook": "முகநூல்",
         "discord": "டிஸ்கார்ட்"
+    },
+    "carousal": {
+        "gods_own_village": "கடவுளின் சொந்த கிராமம்",
+        "nature": "இயற்கை",
+        "heaven": "சொர்க்கம்",
+        "beauty": "அழகு"
     }
 }

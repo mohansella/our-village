@@ -1,11 +1,12 @@
 <script>
     import Carousel from '@beyonk/svelte-carousel'
     import { ChevronLeftIcon, ChevronRightIcon } from 'svelte-feather-icons'
+    import { _ } from "@/services/LocaleService.js";
 
     const images = [
-        { src: 'IMG_20200117_154938.jpg', alt: 'Poolampatti landscape 1', heading: 'Nature'},
-        { src: 'IMG_20181223_072757-01.jpg', alt: 'Poolampatti landscape 2', heading: 'Heaven'},
-        { src: 'IMG_20190907_140811.jpg', alt: 'Poolampatti landscape 3', heading: 'Beauty'}
+        { src: 'IMG_20200117_154938.jpg', alt: 'Poolampatti landscape 1', heading: 'carousal.nature'},
+        { src: 'IMG_20181223_072757-01.jpg', alt: 'Poolampatti landscape 2', heading: 'carousal.heaven'},
+        { src: 'IMG_20190907_140811.jpg', alt: 'Poolampatti landscape 3', heading: 'carousal.beauty'}
     ];
 </script>
 
@@ -18,8 +19,8 @@
       <img class="slide-content" src={`images/landscape/${image.src}`} alt={image.alt}>
       <div class="centered-div">
         <header>
-          <p>Gods Own village</p>
-          <h2>{image.heading}</h2>
+          <p>{$_("carousal.gods_own_village")}</p>
+          <h2>{$_(image.heading)}</h2>
         </header>
       </div>
     </div>
