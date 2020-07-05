@@ -47,6 +47,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        background: black;
+    }
+    .container > img {
+        opacity: 0.90;
     }
     .centered-div {
         position: absolute;
