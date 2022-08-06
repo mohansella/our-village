@@ -3,5 +3,8 @@
   "diffEditor.wordWrap": "on",
   "editor.wordWrap": "on",
   "editor.formatOnSave": true,
-  "editor.formatOnPaste": true
+  "editor.formatOnPaste": true,
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  }
 }
