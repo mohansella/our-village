@@ -1,25 +1,26 @@
 {
-    "titles": {
-        "main": {
-            "disp": "Poolampatti",
-            "desc": "Poolampatti - God's own Village"
-        }
-    },
-    "header": {
-        "culture": "Culture",
-        "tourism": "Tourism",
-        "events": "Events",
-        "gallery": "Gallery",
-        "blogs": "Blogs",
-
-        "instagram": "Instagram",
-        "facebook": "Facebook",
-        "discord": "Discord"
-    },
-    "carousel": {
-        "gods_own_village": "GODS OWN VILLAGE",
-        "nature": "Nature",
-        "heaven": "Heaven",
-        "beauty": "Beauty"
+  "titles": {
+    "main": {
+      "disp": "Poolampatti",
+      "desc": "Poolampatti - God's own Village"
     }
+  },
+  "header": {
+    "culture": "Culture",
+    "tourism": "Tourism",
+    "events": "Events",
+    "gallery": "Gallery",
+    "blogs": "Blogs",
+
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "discord": "Discord",
+    "youtube": "Youtube"
+  },
+  "carousel": {
+    "gods_own_village": "GODS OWN VILLAGE",
+    "nature": "Nature",
+    "heaven": "Heaven",
+    "beauty": "Beauty"
+  }
 }
